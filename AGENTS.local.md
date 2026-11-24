@@ -8,6 +8,7 @@
 - Treat every change as production code for upstream review. Follow SGLang's contribution guide, style, and tooling. Match the conventions of the code you are editing and preserve the contracts that existing callers rely on.
 - Write the simplest complete implementation. Use precise names, direct control flow, and cohesive functions. Reuse existing code where it fits. Add abstractions only when a concrete requirement or real duplication justifies them. Keep the diff focused on the requested behavior.
 - Verify assumptions against the implementation and its tests. Remove boilerplate, redundant comments, speculative fallback paths, and unused scaffolding. Keep comments that explain an invariant or a design decision the code alone cannot convey.
+- Preserve existing docstrings when editing, moving, or refactoring code. If a docstring no longer matches the behavior, update it rather than removing it.
 - For KV-cache changes, trace slot ownership and lifetime through allocation, sharing, release, and eviction. Make the relevant invariants clear in the code and verify that the change preserves them.
 - Review the diff line by line. For every added or changed line, be able to explain why it belongs in the change and why its form fits the surrounding code. Simplify or remove lines without a clear purpose. Run the applicable upstream format, lint, and focused behavior checks. Cover real regressions with a targeted test where needed, and report any checks you could not run.
 
